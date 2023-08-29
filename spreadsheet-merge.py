@@ -1,7 +1,7 @@
 import csv
 # Read data from the first CSV file
 file1_data = set()
-with open('file1.csv', 'r') as file1:
+with open('file1.csv', 'r') as file1: #change name to match filename
     csv_reader = csv.reader(file1)
     next(csv_reader)  # Skip header
     for row in csv_reader:
@@ -9,7 +9,7 @@ with open('file1.csv', 'r') as file1:
 
 # Read data from the second CSV file
 file2_data = set()
-with open('file2.csv', 'r') as file2:
+with open('file2.csv', 'r') as file2: #change name to match filename
     csv_reader = csv.reader(file2)
     next(csv_reader)  # Skip header
     for row in csv_reader:
