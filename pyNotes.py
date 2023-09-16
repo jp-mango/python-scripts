@@ -189,7 +189,9 @@ for key, value in person.items(): # Loop through the key-value pairs in the dict
     print(f'{key}: {value}')
 
 print("\n")
+
 #! While
+
 print("--While Loops:--\n")
 #Counting from 1 to 10 using a while loop:
 i = 1
