@@ -11,7 +11,7 @@ def viewCounter(event, context):
         }
     )
     prevViewCount = data['Item']['quantity']['N']
-    
+
     response = client.update_item(
         TableName = 'ResumeSiteVisitors',
         Key = {
@@ -21,9 +21,9 @@ def viewCounter(event, context):
         ExpressionAttributeValues = {":inc" : {"N":"1"}},
         ReturnValues = 'UPDATED_NEW'
     )
-    
+
     value = response['Attributes']['quantity']['N']
-    
+
     return{
         'statusCode': 200,
         'body': value
