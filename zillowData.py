@@ -6,7 +6,7 @@ import datetime
 
 # Loading configuration from the config.ini file using its absolute path
 config = configparser.ConfigParser()
-config.read(os.path.abspath('./zillow_db/config.ini'))
+config.read(os.path.abspath('./zillow_db/config.ini')) # use full filepath if automating
 
 # Define PostgreSQL database connection parameters from the configuration file, and api_key
 db_params = {
@@ -21,7 +21,7 @@ api_key = config.get('API', 'api_key')  # API key from configuration file
 zillow_data_url = f'https://data.nasdaq.com/api/v3/datatables/ZILLOW/DATA.csv?&api_key={api_key}'
 zillow_indicators_url = f'https://data.nasdaq.com/api/v3/datatables/ZILLOW/INDICATORS.csv?&api_key={api_key}'
 zillow_regions_url = f'https://data.nasdaq.com/api/v3/datatables/ZILLOW/REGIONS.csv?&api_key={api_key}'
-output_folder = "zillow_db"
+output_folder = "zillow_db" # use full filepath if automating
 os.makedirs(output_folder, exist_ok=True)
 
 # Define a function to download and save a CSV file
@@ -33,7 +33,7 @@ def download_and_save_csv(url, table_name):
         if response.status_code == 200:
             # Construct the file path to save the CSV
             file_name = f"{table_name}.csv"
-            file_path = os.path.join(output_folder, file_name)
+            file_path = os.path.join(output_folder, file_name) 
 
             # Save the CSV content to the file
             with open(file_path, 'wb') as file:
