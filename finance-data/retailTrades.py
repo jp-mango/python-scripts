@@ -6,12 +6,12 @@ import configparser
 
 # Loading configuration from the config.ini file using its absolute path
 config = configparser.ConfigParser()
-config.read(os.path.abspath('C:/Users/menzi/Code/NQ Tables/retail-activity/retailTrades.ini'))
+config.read(os.path.abspath('C:/Users/menzi/Code/NQ_Tables/retail-activity/retailTrades.ini'))
 api_key = config.get('API', 'api_key')
 
 # Format: https://data.nasdaq.com/api/v3/datatables/{Table Code}/.{csv,json,xml}?api_key={api}
-table_url = f'https://data.nasdaq.com/api/v3/datatables/NDAQ/RTAT10.csv?api_key={api_key}'
-output_folder = 'C:/Users/menzi/Code/NQ Tables/retail-activity'
+table_url = f'https://data.nasdaq.com/api/v3/datatables/NDAQ/RTAT10.csv?&api_key={api_key}'
+output_folder = 'C:/Users/menzi/Code/NQ_Tables/retail-activity'
 os.makedirs(output_folder, exist_ok=True)
 
 # Define a function to download and save a CSV file
