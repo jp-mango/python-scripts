@@ -6,7 +6,7 @@ import datetime
 
 # Loading configuration from the config.ini file using its absolute path
 config = configparser.ConfigParser()
-config.read(os.path.abspath('./zillow_db/config.ini')) # use full filepath if automating
+config.read(os.path.abspath('./zillow_db/zillowData.ini')) # use full filepath if automating
 
 # Define PostgreSQL database connection parameters from the configuration file, and api_key
 db_params = {
