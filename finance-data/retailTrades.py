@@ -11,7 +11,7 @@ api_key = config.get('API', 'api_key')
 
 # Format: https://data.nasdaq.com/api/v3/datatables/{Table Code}/.{csv,json,xml}?api_key={api}
 table_url = f'https://data.nasdaq.com/api/v3/datatables/NDAQ/RTAT10.csv?api_key={api_key}'
-output_folder = 'C:/Users/menzi/Code/NQ_Tables/retail-activity'
+output_folder = 'C:/Users/menzi/Code/NQ Tables/retail-activity'
 os.makedirs(output_folder, exist_ok=True)
 
 # Define a function to download and save a CSV file
