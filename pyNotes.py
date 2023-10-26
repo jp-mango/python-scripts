@@ -366,3 +366,189 @@ with open("data1.csv", "r") as f:
     for row in reader:
         name, age, gender = row
         print(f"{name} is a{age} year old{gender}")
+
+print("\n")
+#! Sets
+print("--Sets:--\n")
+
+# Creating a set
+fruits = {"apple", "banana", "cherry"}
+print(fruits)
+
+# Adding an element to the set
+fruits.add("orange")
+print(fruits)
+
+# Removing an element from the set
+fruits.remove("banana")
+print(fruits)
+
+# Checking if an element is in the set
+print("apple" in fruits)
+
+# Set operations: union, intersection, difference
+other_fruits = {"grape", "apple", "kiwi"}
+print(fruits.union(other_fruits))
+print(fruits.intersection(other_fruits))
+print(fruits.difference(other_fruits))
+
+print("\n")
+#! Conditionals
+print("--Conditionals:--\n")
+
+x = 10
+y = 20
+
+if x < y:
+    print("x is less than y")
+elif x == y:
+    print("x is equal to y")
+else:
+    print("x is greater than y")
+
+# Using logical operators: and, or, not
+if x < 15 and y > 15:
+    print("Both conditions are true")
+
+# Inline if-else
+message = "x is less than y" if x < y else "x is greater or equal to y"
+print(message)
+
+print("\n")
+#! Exceptions
+print("--Exceptions:--\n")
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except Exception as e:
+    print(f"An error occurred: {e}")
+else:
+    print("Division successful!")
+finally:
+    print("This block always executes")
+
+print("\n")
+#! Classes and Objects
+print("--Classes and Objects:--\n")
+
+class Dog:
+    # Class variable
+    species = "Canis familiaris"
+
+    # Initializer
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Instance method
+    def description(self):
+        return f"{self.name} is {self.age} years old"
+
+    # Another instance method
+    def speak(self, sound):
+        return f"{self.name} says {sound}"
+
+# Creating objects of the Dog class
+mikey = Dog("Mikey", 6)
+print(mikey.description())
+print(mikey.speak("Gruff gruff"))
+
+print("\n")
+#! Lambda Functions
+print("--Lambda Functions:--\n")
+
+# Regular function
+def add(x, y):
+    return x + y
+
+# Lambda function
+add_lambda = lambda x, y: x + y
+
+print(add(5, 3))
+print(add_lambda(5, 3))
+
+print("\n")
+#! List Comprehensions
+print("--List Comprehensions:--\n")
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = [x ** 2 for x in numbers]
+print(squared_numbers)
+
+# With condition
+even_squares = [x ** 2 for x in numbers if x % 2 == 0]
+print(even_squares)
+
+print("\n")
+
+#! Match Case
+print("--Match Case (Python 3.10+):--\n")
+
+# Simple example
+x = "a"
+
+match x:
+    case "a":
+        print("Matched a")
+    case "b":
+        print("Matched b")
+    case _:
+        print("No match")
+
+# Using patterns with match case
+point = (1, 2)
+
+match point:
+    case (0, 0):
+        print("Origin")
+    case (0, y):
+        print(f"Y-axis, y = {y}")
+    case (x, 0):
+        print(f"X-axis, x = {x}")
+    case (x, y):
+        print(f"Point is at ({x}, {y})")
+    case _:
+        print("Not a point")
+
+# Matching on data types
+value = "Hello"
+
+match value:
+    case int():
+        print("It's an integer!")
+    case str():
+        print("It's a string!")
+    case list():
+        print("It's a list!")
+    case _:
+        print("Unknown type")
+
+# Matching on instance variables of classes
+class Point:
+    x: int
+    y: int
+
+p = Point()
+p.x = 2
+p.y = 3
+
+match p:
+    case Point(x=0, y=y):
+        print(f"Point is on Y-axis at {y}")
+    case Point(x=x, y=0):
+        print(f"Point is on X-axis at {x}")
+    case Point():
+        print("Point is somewhere else on the plane")
+    case _:
+        print("Not a point")
+
+# Using OR patterns in match
+day = "Monday"
+
+match day:
+    case "Monday" | "Tuesday" | "Wednesday":
+        print("It's one of the first three weekdays")
+    case _:
+        print("It's some other day")
