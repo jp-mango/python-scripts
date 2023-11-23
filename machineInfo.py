@@ -12,9 +12,9 @@ def get_system_info():
         "CPU Count": psutil.cpu_count(logical=False),
         "Total Physical Memory": f"{psutil.virtual_memory().total / (1024**3):.2f} GB",
         "Memory Usage": f"{psutil.virtual_memory().percent}%",
-        "Disk Total": f"{psutil.disk_usage('/').total / (1024**3):.2f} GB",
-        "Disk Used": f"{psutil.disk_usage('/').used / (1024**3):.2f} GB",
-        "Disk Usage": f"{psutil.disk_usage('/').percent}%",
+        "Disk Total": f"{psutil.disk_usage('C:\\').total / (1024**3):.2f} GB",
+        "Disk Used": f"{psutil.disk_usage('C:\\').used / (1024**3):.2f} GB",
+        "Disk Usage": f"{psutil.disk_usage('C:\\').percent}%",
     }
     return info
 
